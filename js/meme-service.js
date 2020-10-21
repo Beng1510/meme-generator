@@ -74,20 +74,21 @@ var gImgs = [
 
 ]
 
-var gMeme = {
-    selectedImgId: 0,
-    selectedLineIdx: 0,
+// var gMeme = {
+//     selectedImgId: 0,
+//     selectedLineIdx: 0,
 
-    lines: [
-        {
-            txt: 'Love and Peace',
-            size: 20,
-            align: 'left',
-            color: 'blue'
-        }
-    ]
-}
+//     lines: [
+//         {
+//             txt: 'Love and Peace',
+//             size: 20,
+//             align: 'left',
+//             color: 'blue'
+//         }
+//     ]
+// }
 
+var gMeme = creatMeme()
 
 // function drawImg() {
 //     console.log('lets draw an img');
@@ -202,4 +203,64 @@ function drawTxt(text,) {
 
 function getFontSize() {
 
+}
+
+function getMemeObj() {
+    return gMeme;
+}
+
+function updateFontSize(diff) {
+
+    // if (diff === 'up') gMeme.lines[gMeme.selectedLineIdx].size += 3
+    gMeme.lines[gMeme.selectedLineIdx].size += diff
+    // else gMeme.lines[gMeme.selectedLineIdx].size -= 3
+}
+
+function getMemeFromUser() {
+    return gMeme;
+}
+
+function updateMemeText(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt;
+    console.log(gMeme.lines[gMeme.selectedLineIdx].txt);
+}
+
+function getMemeImg(img) {
+    var imageSource = img.getAttribute('src')
+console.log(imageSource);
+    return imageSource
+}
+
+function updateMeme() {
+    gMeme = creatMeme();
+    console.log(gMeme);
+}
+
+function creatMeme() {
+    return {
+        selectedImgId: 1,
+        selectedLineIdx: 0,
+        lines: [
+            { txt: 'Your Text', size: 50, align: 'center', color: 'white', font: 'Impact' },
+            { txt: 'Your Text', size: 50, align: 'center', color: 'white', font: 'Impact' }
+            ]
+    }
+}
+
+function updateMemeImg(imgId) {
+    gMeme.selectedImgId = imgId;
+    console.log( gMeme.selectedImgId);
+}
+
+function getImgSrc() {
+    return gImgs.find(img => img.id === gMeme.selectedImgId);
+}
+
+function changeTxtSize(diff) {
+    gMeme.lines[gMeme.selectedLineIdx].size += diff;
+}
+
+
+function getSelectedLineIdx() {
+    return gMeme.selectedLineIdx;
 }
