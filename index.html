@@ -11,7 +11,7 @@
 
 <body onload="init()">
     <section class="canvas-container">
-        <canvas id="my-canvas" height="250" width="250" onclick="draw(event)"></canvas>
+        <canvas id="my-canvas" height="300" width="300" onclick="draw(event)"></canvas>
     </section>
     <!-- <img src="img/1.jpg"> -->
 
@@ -35,6 +35,11 @@
         <img class="img17 grid-item" src="img/17.jpg">
         <img class="img18 grid-item" src="img/18.jpg">
     </section> -->
+
+
+    <label for="userTxt">Write:</label>
+    <input type="text" id="userTxt" name="userTxt" onchange="onUserTxtInput()" placeholder="Write what You Want">
+
 
 
     <script src="js/utils-service.js"></script>
