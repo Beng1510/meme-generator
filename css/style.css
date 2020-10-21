@@ -12,10 +12,13 @@ canvas {
 .canvas-container {
     background-color: aquamarine;
     width: 100vw;
-    height: 500px;
+    height: 600px;
     border: 2px solid red;
 }
 
+input {
+    font-size: 30px;
+}
 /* ////grid///// */
 
 /* .grid {
@@ -31,3 +34,7 @@ canvas {
     width: 100px;
 
 } */
+
+img {
+    width: 200px;
+}

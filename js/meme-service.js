@@ -1,3 +1,94 @@
+var gImgs = [
+    {
+        id: 1,
+        url: 'img/1.jpg',
+    },
+    {
+        id: 2,
+        url: 'img/2.jpg',
+    },
+    {
+        id: 3,
+        url: 'img/3.jpg',
+    },
+    {
+        id: 4,
+        url: 'img/4.jpg',
+    },
+    {
+        id: 5,
+        url: 'img/5.jpg',
+    },
+    {
+        id: 6,
+        url: 'img/6.jpg',
+    },
+    {
+        id: 7,
+        url: 'img/7.jpg',
+    },
+    {
+        id: 8,
+        url: 'img/8.jpg',
+    },
+    {
+        id: 9,
+        url: 'img/9.jpg',
+    },
+    {
+        id: 10,
+        url: 'img/10.jpg',
+    },
+    {
+        id: 11,
+        url: 'img/11.jpg',
+    },
+    {
+        id: 12,
+        url: 'img/12.jpg',
+    },
+    {
+        id: 13,
+        url: 'img/13.jpg',
+    },
+    {
+        id: 14,
+        url: 'img/14.jpg',
+    },
+    {
+        id: 15,
+        url: 'img/15.jpg',
+    },
+    {
+        id: 16,
+        url: 'img/16.jpg',
+    },
+    {
+        id: 17,
+        url: 'img/17.jpg',
+    },
+    {
+        id: 18,
+        url: 'img/18.jpg',
+    }
+
+]
+
+var gMeme = {
+    selectedImgId: 0,
+    selectedLineIdx: 0,
+
+    lines: [
+        {
+            txt: 'Love and Peace',
+            size: 20,
+            align: 'left',
+            color: 'blue'
+        }
+    ]
+}
+
+
 // function drawImg() {
 //     console.log('lets draw an img');
 //     var img = new Image()
@@ -6,7 +97,7 @@
 //         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
 //     }
 // }
-function drawImg(imgSrc) {
+function drawImg(imageSource) {
     console.log('lets draw an img');
     var img = new Image()
     img.onload = () => {
@@ -17,8 +108,8 @@ function drawImg(imgSrc) {
         // gCtx.fillText(gMeme.lines[0].txt, 50, 50)
         // gCtx.strokeText(gMeme.lines[0].txt, 50, 50)
     };
-    img.src = imgSrc;
-    
+    img.src = imageSource;
+
 }
 
 
@@ -37,14 +128,14 @@ function drawImg(imgSrc) {
 
 function UserTxtInput() {
     console.log('hi');
-    
+
     // let text = document.getElementById('userTxt').value;
-   var newObj = {
-    txt: document.getElementById('userTxt').value,
-    size: 20,
-    align: 'left',
-    color: 'blue'
-   }
+    var newObj = {
+        txt: document.getElementById('userTxt').value,
+        size: 20,
+        align: 'left',
+        color: 'blue'
+    }
 
     gMeme.lines.push(newObj)
     // gCtx.strokeStyle = 'black'
@@ -52,11 +143,37 @@ function UserTxtInput() {
     //     gCtx.font = '24px IMPACT';
     // gCtx.fillText(text, 50, 50)
     // gCtx.strokeText(text, 50, 50)
-    console.log('gMeme.lines',gMeme.lines);
-return newObj.txt
+    console.log('gMeme.lines', gMeme.lines);
+    return newObj.txt
 }
 
-function clickedImg(img) {
-    var imgSrc = img.getAttribute('src')
-   return imgSrc
+// function clickedImg(img) {
+//     var imgSrc = img.getAttribute('src')
+
+//    return imgSrc
+// }
+function getSource(img) {
+    var imageSource = img.getAttribute('src')
+
+    return imageSource
+}
+
+function getId(img) {
+    var imageId = img.getAttribute('id')
+
+    return imageId
+}
+
+function getImagesForDisplay() {
+    var images = gImgs
+    return images
+}
+
+function getImageById(imgId) {
+    // console.log('gBooks', gBooks);
+    const image = gImgs.find((image) => {
+        return imgId === image.id
+    })
+    console.log('image', image);
+    return image
 }
