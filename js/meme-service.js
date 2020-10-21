@@ -104,9 +104,9 @@ function drawImg(imageSource) {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
         // gCtx.strokeStyle = 'black'
         // gCtx.fillStyle = 'white'
-        // gCtx.font = '24px IMPACT';
-        // gCtx.fillText(gMeme.lines[0].txt, 50, 50)
-        // gCtx.strokeText(gMeme.lines[0].txt, 50, 50)
+        // gCtx.font = '48px IMPACT';
+        // gCtx.fillText(gMeme.lines[0].txt, 100, 150)
+        // gCtx.strokeText(gMeme.lines[0].txt, 100, 150)
     };
     img.src = imageSource;
 
@@ -132,7 +132,7 @@ function UserTxtInput() {
     // let text = document.getElementById('userTxt').value;
     var newObj = {
         txt: document.getElementById('userTxt').value,
-        size: 20,
+        size: 48,
         align: 'left',
         color: 'blue'
     }
@@ -176,4 +176,30 @@ function getImageById(imgId) {
     })
     console.log('image', image);
     return image
+}
+
+function IncreaseText() {
+    console.log('increase text');
+    console.log('gMeme', gMeme);
+    var selectedID = gMeme.selectedImgId
+    console.log('selectedID', selectedID);
+    // console.log('gMeme.lines.color',gMeme.lines[1].color);
+    console.log('gMeme.lines.size', gMeme.lines[0].size);
+    
+
+}
+
+
+function drawTxt(text,) {
+    gCtx.strokeStyle = 'black'
+    gCtx.fillStyle = gMeme.lines[0].color
+    gCtx.font = '48px IMPACT';
+    // gCtx.font = getFontSize();
+    gCtx.textAlign = gMeme.lines[0].align
+    gCtx.fillText(text, 50, 50)
+    gCtx.strokeText(text, 50, 50)
+}
+
+function getFontSize() {
+
 }
