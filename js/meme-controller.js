@@ -242,14 +242,7 @@ function onAddNewText() {
     addNewText();
     renderCanvas();  
 
-// var strHtml = ''
-//     strHtml = `
-//     <input class="text-input" type="sumbit" id="text-submit-another" placeholder="Write here your text">
-//     <button onclick="onWriteTextAnother()">Submit Text</button>
-//     `
-//     document.querySelector('.text-add').innerHTML = strHtml;
-//     addText()
-//     renderCanvas()
+
 }
 
 function getColor(){
@@ -259,7 +252,7 @@ function getColor(){
 function showEditor() {
     var x = document.getElementById("meme-editor");
     if (x.style.display === "none") {
-      x.style.display = "block";
+      x.style.display = "flex";
     // } else {
     //   x.style.display = "none";
     }
@@ -271,3 +264,6 @@ function downloadCanvas(elLink) {
     elLink.href = data
     elLink.download = 'meme.jpg'
 }
+
+
+

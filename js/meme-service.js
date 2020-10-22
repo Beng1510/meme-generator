@@ -74,56 +74,19 @@ var gImgs = [
 
 ]
 
-// var gMeme = {
-//     selectedImgId: 0,
-//     selectedLineIdx: 0,
-
-//     lines: [
-//         {
-//             txt: 'Love and Peace',
-//             size: 20,
-//             align: 'left',
-//             color: 'blue'
-//         }
-//     ]
-// }
-
 var gMeme = creatMeme()
 
-// function drawImg() {
-//     console.log('lets draw an img');
-//     var img = new Image()
-//     img.src = gImgs[gMeme.selectedImgId].url;
-//     img.onload = () => {
-//         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-//     }
-// }
 function drawImg(imageSource) {
     console.log('lets draw an img');
     var img = new Image()
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-        // gCtx.strokeStyle = 'black'
-        // gCtx.fillStyle = 'white'
-        // gCtx.font = '48px IMPACT';
-        // gCtx.fillText(gMeme.lines[0].txt, 100, 150)
-        // gCtx.strokeText(gMeme.lines[0].txt, 100, 150)
+      
     };
     img.src = imageSource;
 
 }
 
-
-// function drawText(text, x, y) {
-//     console.log('lets write');
-//     gCtx.strokeStyle = 'red'
-//     gCtx.fillStyle = 'white'
-//     gCtx.lineWidth = '2'
-//     gCtx.font = '24px Ariel'
-//     gCtx.textAlign = 'start'
-//     gCtx.fillText(text, x, y)
-//     gCtx.strokeText(text, x, y)
-// }
 
 
 
@@ -139,12 +102,6 @@ function UserTxtInput() {
     }
 
     gMeme.lines.push(newObj)
-    // gCtx.strokeStyle = 'black'
-    //     gCtx.fillStyle = 'white'
-    //     gCtx.font = '24px IMPACT';
-    // gCtx.fillText(text, 50, 50)
-    // gCtx.strokeText(text, 50, 50)
-    console.log('gMeme.lines', gMeme.lines);
     return newObj.txt
 }
 
