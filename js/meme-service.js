@@ -186,7 +186,7 @@ function IncreaseText() {
     console.log('selectedID', selectedID);
     // console.log('gMeme.lines.color',gMeme.lines[1].color);
     console.log('gMeme.lines.size', gMeme.lines[0].size);
-    
+
 
 }
 
@@ -227,7 +227,7 @@ function updateMemeText(txt) {
 
 function getMemeImg(img) {
     var imageSource = img.getAttribute('src')
-console.log(imageSource);
+    console.log(imageSource);
     return imageSource
 }
 
@@ -241,16 +241,17 @@ function creatMeme() {
         selectedImgId: 1,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'Your Text', size: 50, align: 'center', color: 'white', font: 'Impact' },
-            { txt: 'Your Text', size: 50, align: 'center', color: 'white', font: 'Impact' }
-            ]
+            { txt: 'First Text', size: 50, align: 'center', color: 'white', font: 'Impact' },
+            { txt: 'Second Text', size: 50, align: 'center', color: 'white', font: 'Impact' }
+        ]
     }
 }
 
 function updateMemeImg(imgId) {
     gMeme.selectedImgId = imgId;
-    console.log( gMeme.selectedImgId);
+    console.log(gMeme.selectedImgId);
 }
+
 
 function getImgSrc() {
     return gImgs.find(img => img.id === gMeme.selectedImgId);
@@ -264,3 +265,56 @@ function changeTxtSize(diff) {
 function getSelectedLineIdx() {
     return gMeme.selectedLineIdx;
 }
+
+function updateMemeLine() {
+    gMeme.selectedLineIdx++;
+    if (gMeme.selectedLineIdx >= gMeme.lines.length) {
+        gMeme.selectedLineIdx = 0;
+    }
+    drawRect()
+    // if (gMeme.selectedLineIdx === 0) {
+    //     gMeme.selectedLineIdx += 1
+    //     console.log('gMeme.selectedLineIdx', gMeme.selectedLineIdx);
+    // }
+    // else {
+    //     gMeme.selectedLineIdx -= 1
+    //     console.log('gMeme.selectedLineIdx', gMeme.selectedLineIdx);
+    // }
+
+}
+
+function  updateFontColor(chosenColor) {
+    gMeme.lines[gMeme.selectedLineIdx].color = chosenColor
+}
+
+function alignLeft() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+}
+function alignRight() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+}
+function alignCenter() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+}
+
+function changeFontFamily(value) {
+    gMeme.lines[gMeme.selectedLineIdx].font = value
+}
+
+function deleteText() {
+    gMeme.lines[gMeme.selectedLineIdx].txt = ''
+}
+
+function addNewText() {
+    var line = {
+        txt: 'Extra Text',
+        size: 50,
+        align: 'center',
+        color: 'white',
+        font: 'Impact'
+    }
+
+    gMeme.lines.push(line);
+    gMeme.selectedLineIdx = gMeme.lines.length - 1;
+}
+
