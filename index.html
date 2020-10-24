@@ -11,102 +11,107 @@
 
 <body onload="init()">
 
-    <header class="main-header">
+    <header class="main-header" id="main-header">
         <nav class="header-container container flex space-between align-center">
 
 
-            <div class="logo">
+            <div class="logo flex">
                 <img class="logo-img-header" src="img/LOGO.png">
             </div>
             <ul class="main-nav clean-list flex">
-                <li><a href="#image-gallery">Gallery</a></li>
-                <li><a href="#">Memes</a></li>
+                <li><a href="#image-gallery" onclick="showGallery()">Gallery</a></li>
+                <li><a onclick="onDisplaySavedMemes(this)" class="memes flex align-center" href="#gallery"
+                        href="#">Memes</a></li>
                 <li><a href="#">About</a></li>
             </ul>
-            <!-- <button class="hamburger" onclick="toggleMenu()">☰</button> -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
     <main class="main container">
 
+        <section class="image-gallery justify-center flex" id="image-gallery"> </section>
 
+        <section id="memes" class="saved-memes container"></section>
 
+        <section class="meme-editor container" id="meme-editor" style="display: none;">
 
-        <section class="meme-editor" id="meme-editor" style="display: none;">
-
-            <section class="canvas-container grid">
-                <canvas id="my-canvas" height="551" width="541" onclick="draw(event)"></canvas>
-
-                <section class="control-panel grid-controller">
-                    <div class="first-row flex">
-
-                        <input class="text-input" type="sumbit" onchange="onWriteText()" id="text-submit"
-                            placeholder="Write here your text">
-                    </div>
-
-                    <div class="second-row flex">
-
-                        <button class="btn select-line-btn" title="Select Line" onclick="onSelectLine()"><img
-                                class="icon switch-line-icon"
-                                src="icons/up-and-down-opposite-double-arrows-side-by-side.png "></button>
-                        <button class="btn move-up-btn" title="Moveup Text" onclick="onMoveTxt(-1)"><img
-                                class="icon move-up-icon" src="icons/up.png "></button>
-                        <button class="btn move-down-btn" title="Movedown Text" onclick="onMoveTxt(1)"><img
-                                class="icon move-down-icon" src="icons/down.png "></button>
-                        <button class="btn add-btn" onclick="onAddNewText()"><img class="icon add-txt-icon"
-                                src="icons/add.png "></button>
-                        <button class="btn delete-btn" onclick="onDeleteText()"><img class="icon delete-icon"
-                                src="icons/trash.png"></button>
-
-                    </div>
-
-                    <div class="third-row flex">
-
-                        <button class="btn increase-btn" title="Increase Text" onclick="onChangeTxtSize(1)"><img
-                                class="icon increase-txt-icon" src="icons/increase font - icon.png"></button>
-                        <button class="btn decrease-btn" title="Decrease Text" onclick="onChangeTxtSize(-1)"><img
-                                class="icon decrease-txt-icon" src="icons/decrease font - icon.png"></button>
-                        <button class="btn align-left-btn" title="Align Line Left" onclick="onAlignLeft()"><img
-                                class="icon align-left-icon" src="icons/align-to-left.png "></button>
-                        <button class="btn align-right-btn" title="Align Line Right" onclick="onAlignRight()"><img
-                                class="icon align-right-icon" src="icons/align-to-right.png "></button>
-                        <button class="btn align-center-btn" title="Align Line Center" onclick="onAlignCenter()"><img
-                                class="icon align-center-icon" src="icons/center-text-alignment.png "></button>
-
-                    </div>
-
-                    <div class="fourth-row flex">
-
-                        <select id="font-family-selection" class="font-change"
-                            onchange="onChangeFontFamily(this.value)">
-                            <option value="0">Select Font</option>
-                            <option value="IMPACT">IMPACT</option>
-                            <option value="Ariel">Ariel</option>
-                            <option value="David">David</option>
-                        </select>
-                        <div class="fill-color">
-                            <button type="button" class="btn fill-color"><img class="icon color-icon"
-                                    src="icons/paint-board-and-brush.png "></button>
-                            <input type="color" class="color-select" id="fill-color" name="color"
-                                onchange="onChangeFontColor(this.value)" />
-                        </div>
-                        <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download=""><img
-                                class="icon download-icon" src="icons/download.png "></a>
-                    </div>
-                  
-
-                    <div class="text-add"></div>
-
-                </section>
+            <section class="canvas-container">
+                <canvas id="my-canvas" height="551" width="541" oncick="draw(event)"></canvas>
             </section>
+
+            <section class="control-panel">
+
+                <div class="first-row flex justify-center align-center">
+
+                    <input class="text-input" type="sumbit" onchange="onWriteText()" id="text-submit"
+                        placeholder="Write here your text">
+                </div>
+
+                <div class="second-row flex justify-center align-center">
+
+                    <button class="btn select-line-btn" title="Select Line" onclick="onSelectLine()"><img
+                            class="icon switch-line-icon"
+                            src="icons/up-and-down-opposite-double-arrows-side-by-side.png "></button>
+                    <button class="btn move-up-btn" title="Moveup Text" onclick="onMoveTxt(-1)"><img
+                            class="icon move-up-icon" src="icons/up.png "></button>
+                    <button class="btn move-down-btn" title="Movedown Text" onclick="onMoveTxt(1)"><img
+                            class="icon move-down-icon" src="icons/down.png "></button>
+                    <button class="btn add-btn" onclick="onAddNewText()"><img class="icon add-txt-icon"
+                            src="icons/add.png "></button>
+                    <button class="btn delete-btn" onclick="onDeleteText()"><img class="icon delete-icon"
+                            src="icons/trash.png"></button>
+
+                </div>
+
+                <div class="third-row flex justify-center align-center">
+
+                    <button class="btn increase-btn" title="Increase Text" onclick="onChangeTxtSize(1)"><img
+                            class="icon increase-txt-icon" src="icons/increase font - icon.png"></button>
+                    <button class="btn decrease-btn" title="Decrease Text" onclick="onChangeTxtSize(-1)"><img
+                            class="icon decrease-txt-icon" src="icons/decrease font - icon.png"></button>
+                    <button class="btn align-left-btn" title="Align Line Left" onclick="onAlignRight()"><img
+                            class="icon align-left-icon" src="icons/align-to-left.png "></button>
+                    <button class="btn align-right-btn" title="Align Line Right" onclick="onAlignLeft()"><img
+                            class="icon align-right-icon" src="icons/align-to-right.png "></button>
+                    <button class="btn align-center-btn" title="Align Line Center" onclick="onAlignCenter()"><img
+                            class="icon align-center-icon" src="icons/center-text-alignment.png "></button>
+
+                </div>
+
+                <div class="fourth-row flex justify-center align-center">
+
+                    <select id="font-family-selection" class="font-change" onchange="onChangeFontFamily(this.value)">
+                        <option value="0">Select Font</option>
+                        <option value="IMPACT">IMPACT</option>
+                        <option value="Ariel">Ariel</option>
+                        <option value="David">David</option>
+                    </select>
+                    <div class="fill-color">
+                        <button type="button" class="btn fill-color"><img class="icon color-icon"
+                                src="icons/paint-board-and-brush.png "></button>
+                        <input type="color" class="color-select" id="fill-color" name="color"
+                            onchange="onChangeFontColor(this.value)" />
+                    </div>
+                    <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download=""><img
+                            class="icon download-icon" src="icons/download.png "></a>
+                </div>
+
+
+                <div class="text-add"></div>
+
+
+
+            </section>
+            <!-- </section> -->
 
         </section>
 
-    
 
 
-        <section class="image-gallery grid-container" id="image-gallery"> </section>
-
+        <div class="modal">
+            <a href="#" onclick="saveImg(this)">Save</a>
+        </div>
 
     </main>
     <footer>
@@ -122,6 +127,7 @@
 
     </footer>
 
+    <script src="js/storage-service.js"></script>
     <script src="js/utils-service.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/meme-controller.js"></script>
