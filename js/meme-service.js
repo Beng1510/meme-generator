@@ -100,19 +100,13 @@ function drawImg(imageSource) {
     var img = new Image()
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-      
     };
     img.src = imageSource;
-
 }
-
-
-
 
 function UserTxtInput() {
     console.log('hi');
 
-    // let text = document.getElementById('userTxt').value;
     var newObj = {
         txt: document.getElementById('userTxt').value,
         size: 48,
@@ -124,11 +118,6 @@ function UserTxtInput() {
     return newObj.txt
 }
 
-// function clickedImg(img) {
-//     var imgSrc = img.getAttribute('src')
-
-//    return imgSrc
-// }
 function getSource(img) {
     var imageSource = img.getAttribute('src')
 
@@ -147,7 +136,6 @@ function getImagesForDisplay() {
 }
 
 function getImageById(imgId) {
-    // console.log('gBooks', gBooks);
     const image = gImgs.find((image) => {
         return imgId === image.id
     })
@@ -155,41 +143,12 @@ function getImageById(imgId) {
     return image
 }
 
-function IncreaseText() {
-    console.log('increase text');
-    console.log('gMeme', gMeme);
-    var selectedID = gMeme.selectedImgId
-    console.log('selectedID', selectedID);
-    // console.log('gMeme.lines.color',gMeme.lines[1].color);
-    console.log('gMeme.lines.size', gMeme.lines[0].size);
-
-
-}
-
-
-function drawTxt(text,) {
-    gCtx.strokeStyle = 'black'
-    gCtx.fillStyle = gMeme.lines[0].color
-    gCtx.font = '48px IMPACT';
-    // gCtx.font = getFontSize();
-    gCtx.textAlign = gMeme.lines[0].align
-    gCtx.fillText(text, 50, 50)
-    gCtx.strokeText(text, 50, 50)
-}
-
-function getFontSize() {
-
-}
-
 function getMemeObj() {
     return gMeme;
 }
 
 function updateFontSize(diff) {
-
-    // if (diff === 'up') gMeme.lines[gMeme.selectedLineIdx].size += 3
     gMeme.lines[gMeme.selectedLineIdx].size += diff
-    // else gMeme.lines[gMeme.selectedLineIdx].size -= 3
 }
 
 function getMemeFromUser() {
@@ -248,15 +207,6 @@ function updateMemeLine() {
         gMeme.selectedLineIdx = 0;
     }
     drawRect()
-    // if (gMeme.selectedLineIdx === 0) {
-    //     gMeme.selectedLineIdx += 1
-    //     console.log('gMeme.selectedLineIdx', gMeme.selectedLineIdx);
-    // }
-    // else {
-    //     gMeme.selectedLineIdx -= 1
-    //     console.log('gMeme.selectedLineIdx', gMeme.selectedLineIdx);
-    // }
-
 }
 
 function  updateFontColor(chosenColor) {
