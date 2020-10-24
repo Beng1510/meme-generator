@@ -607,4 +607,7 @@ footer .logo {
     .about-me {
         padding: 0;
     }
+    .logo-img-header {
+        height: 100%;
+    }
 }
