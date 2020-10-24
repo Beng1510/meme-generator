@@ -59,7 +59,7 @@ function drawText(meme) {
     lines.forEach((line, Idx) => {
         var x = gTxtLinePosition[Idx].x;
         var y = gTxtLinePosition[Idx].y;
-        gCtx.strokeStyle = 'black'
+        gCtx.strokeStyle = line.stroke
         gCtx.fillStyle = line.color
         gCtx.font = line.size + 'px ' + line.font;
         gCtx.textAlign = line.align
@@ -209,6 +209,11 @@ function onChangeFontColor(chosenColor) {
     renderCanvas()
 }
 
+function onChangeStrokeColor(chosenStroke) {
+    updateStrokeColor(chosenStroke)
+    renderCanvas()
+}
+
 function onAlignLeft() {
     alignLeft()
     renderCanvas()
@@ -271,9 +276,11 @@ function showGallery() {
     var gallery = document.getElementById("image-gallery");
     var memeEditor = document.getElementById("meme-editor");
     if (gallery.style.display = "none") {
-        gallery.style.display = "flex"
-        memeEditor.style.display === "none"
+        memeEditor.style.display = "none"
+        gallery.style.display = "flex";
+        console.log('checking');
     }
+    
 }
 
 
@@ -304,7 +311,7 @@ function onDisplaySavedMemes(el) {
     // document.querySelector('.about').classList.remove('active');
 
     renderSavedMemes()
-    document.querySelector('.saved-memes').style.display = 'grid';
+    document.querySelector('.saved-memes').style.display = 'flex';
 }
 
 

@@ -198,8 +198,8 @@ function creatMeme() {
         selectedImgId: 1,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'First Text', size: 50, align: 'center', color: 'white', font: 'Impact' },
-            { txt: 'Second Text', size: 50, align: 'center', color: 'white', font: 'Impact' }
+            { txt: 'First Text', size: 50, align: 'center', color: 'white', stroke: 'black', font: 'Impact' },
+            { txt: 'Second Text', size: 50, align: 'center', color: 'white', stroke: 'black', font: 'Impact' }
         ]
     }
 }
@@ -242,6 +242,9 @@ function updateMemeLine() {
 
 function  updateFontColor(chosenColor) {
     gMeme.lines[gMeme.selectedLineIdx].color = chosenColor
+}
+function  updateStrokeColor(chosenStroke) {
+    gMeme.lines[gMeme.selectedLineIdx].stroke = chosenStroke
 }
 
 function alignLeft() {

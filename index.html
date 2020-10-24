@@ -16,13 +16,13 @@
 
 
             <div class="logo flex">
-                <img class="logo-img-header" src="img/LOGO.png">
+                <img class="logo-img-header" src="img/LOGO.png" onclick="showGallery()">
             </div>
             <ul class="main-nav clean-list flex">
-                <li><a href="#image-gallery" onclick="showGallery()">Gallery</a></li>
+                <li><a href="#image-gallery" onclick="showGallery()" class="galleryflex align-center">Gallery</a></li>
                 <li><a onclick="onDisplaySavedMemes(this)" class="memes flex align-center" href="#gallery"
                         href="#">Memes</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
             <button class="hamburger" onclick="toggleMenu()">☰</button>
         </nav>
@@ -30,9 +30,9 @@
 
     <main class="main container">
 
-        <section class="image-gallery justify-center flex" id="image-gallery"> </section>
+        <section class="image-gallery container justify-center flex" id="image-gallery"> </section>
 
-        <section id="memes" class="saved-memes container"></section>
+        <section id="memes" class="saved-memes container justify-center flex"></section>
 
         <section class="meme-editor container" id="meme-editor" style="display: none;">
 
@@ -48,7 +48,8 @@
                         placeholder="Write here your text">
                 </div>
 
-                <div class="second-row flex justify-center align-center">
+                <!-- <div class="second-row flex justify-center align-center"> -->
+                <div class="second-row flex justify-center">
 
                     <button class="btn select-line-btn" title="Select Line" onclick="onSelectLine()"><img
                             class="icon switch-line-icon"
@@ -93,10 +94,22 @@
                         <input type="color" class="color-select" id="fill-color" name="color"
                             onchange="onChangeFontColor(this.value)" />
                     </div>
-                    <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download=""><img
-                            class="icon download-icon" src="icons/download.png "></a>
+                    <div class="stroke-color">
+                        <button type="button" class="btn stroke-color"><img class="icon stroke-color-icon"
+                                src="icons/text stroke.png "></button>
+                        <input type="color" class="stroke-color-select" id="stroke-color" name="stroke-color"
+                            onchange="onChangeStrokeColor(this.value)" />
+                    </div>
                 </div>
 
+                <div class="fifth-row flex align-center">
+                    <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download=""><img
+                            class="icon download-icon" src="icons/download.png "></a>
+
+                    <button class="btn save-btn">
+                        <a href="#" onclick="saveImg(this)">Save</a>
+                    </button>
+                </div>
 
                 <div class="text-add"></div>
 
@@ -108,12 +121,24 @@
         </section>
 
 
-
-        <div class="modal">
-            <a href="#" onclick="saveImg(this)">Save</a>
-        </div>
-
     </main>
+
+    
+    <section id="about" class="about-container flex align-center justify-center">
+        <img class="about-img" src="img/me.jpg">
+        <div class="about-me">
+            <p class="about-p">My Name Is Ben Graham <br> Hope you all enjoy my Meme Generator
+            </p>
+            <a href="https://www.linkedin.com/feed/" target="_blank" class="link"><img
+                class="icon linkedin-icon" src="icons/linkedin-logo.png"></a>
+            <a href="https://www.facebook.com/" target="_blank" class="link"><img
+                class="icon facebook-icon" src="icons/facebook-logo.png"></a>
+            <a href="https://github.com/Beng1510/meme-generator" target="_blank" class="link"><img
+                class="icon github-icon" src="icons/github-logo.png"></a>
+        </div>
+    </section>
+
+
     <footer>
 
         <section class="container">
