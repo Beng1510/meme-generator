@@ -220,7 +220,13 @@ canvas {
     /* padding: 20px 10px; */
     margin: 0 10px;
 }
-
+form {
+    display: flex;
+}
+form >* {
+    
+    margin: 0 10px;
+}
 .meme-editor {
     display: flex;
 }
@@ -373,6 +379,19 @@ select {
     font-size: 20px;
 }
 
+.btn.publish-btn {
+    font-size: 13px;
+    font-family: 'Mont-reg';
+    
+}
+.btn.share-btn {
+    font-size: 18px;
+    font-family: 'Mont-reg';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ///ABOUT//// */
 .about-container {
     height: 100%;
@@ -506,6 +525,9 @@ footer .logo {
     .btn .icon {
         width: 27px;
         height: 30px;
+    }
+    .btn.share-btn {
+        font-size: 12px;
     }
     .icon.download-icon {
         width: 41px;

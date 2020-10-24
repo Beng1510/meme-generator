@@ -107,12 +107,27 @@
                 </div>
 
                 <div class="fifth-row flex align-center">
-                    <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download=""><img
-                            class="icon download-icon" src="icons/download.png "></a>
+                    <!-- <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download=""><img
+                            class="icon download-icon" src="icons/download.png "></a> -->
 
-                    <button class="btn save-btn">
+                    <!-- <button class="btn save-btn">
                         <a href="#" onclick="saveImg(this)">Save</a>
-                    </button>
+                    </button> -->
+
+                    <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                        <a href="#" class="btn download-btn" onclick="downloadCanvas(this)" download="">
+                            <img class="icon download-icon" src="icons/download.png "></a>
+                        <button class="btn save-btn">
+                            <a href="#" onclick="saveImg(this)">Save</a>
+                        </button>
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="btn publish-btn" type="submit"><img
+                            class="icon facebook-icon" src="icons/facebook-logo.png"></button>
+
+                        <div class="share-container"></div>
+                        
+                      </form>
+                    
                 </div>
 
                 <div class="text-add"></div>
