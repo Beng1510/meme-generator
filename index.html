@@ -15,18 +15,22 @@
         <nav class="header-container container flex space-between align-center">
 
 
-            <div class="logo flex">
+            <div class="logo ">
                 <img class="logo-img-header" src="img/LOGO.png" onclick="showGallery()">
             </div>
             <ul class="main-nav clean-list flex">
-                <li><a href="#image-gallery" onclick="showGallery()" class="galleryflex align-center">Gallery</a></li>
+                <li><a href="#image-gallery" onclick="showGallery()" class="gallery flex align-center">Gallery</a></li>
                 <li><a onclick="onDisplaySavedMemes(this)" class="memes flex align-center" href="#gallery"
                         href="#">Memes</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" onclick="showAbout()">About</a></li>
             </ul>
             <button class="hamburger" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
+
+    <div class="keyword-container container flex space-between align-center">
+
+    </div>
 
     <main class="main container">
 

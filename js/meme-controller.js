@@ -273,14 +273,21 @@ function downloadCanvas(elLink) {
 
 
 function showGallery() {
-    var gallery = document.getElementById("image-gallery");
-    var memeEditor = document.getElementById("meme-editor");
-    if (gallery.style.display = "none") {
-        memeEditor.style.display = "none"
-        gallery.style.display = "flex";
-        console.log('checking');
+    var gallery = document.getElementById('image-gallery');
+    var memeEditor = document.getElementById('meme-editor');
+    var savedMemes = document.getElementById('memes')
+    var aboutContainer = document.getElementById('about')
+    if (gallery.style.display = 'none') {
+        memeEditor.style.display = 'none'
+        gallery.style.display = 'flex';
+        savedMemes.style.display = 'none'
+        aboutContainer.style.display = 'flex'
     }
-    
+}
+
+function showAbout() {
+    var aboutContainer = document.getElementById('about')
+    if (aboutContainer.style.display = 'none')  aboutContainer.style.display = 'flex'
 }
 
 
@@ -304,14 +311,14 @@ function onDisplaySavedMemes(el) {
     document.querySelector('.canvas-container').style.display = 'none';
     document.querySelector('.control-panel').style.display = 'none';
     document.querySelector('.image-gallery').style.display = 'none';
-    // document.querySelector('.about-container').style.display = 'none';
+    document.querySelector('.about-container').style.display = 'none';
+    document.querySelector('.saved-memes').style.display = 'flex';
 
-    el.classList.add('active');
+    // el.classList.add('active');
     // document.querySelector('.gallery').classList.remove('active');
     // document.querySelector('.about').classList.remove('active');
 
     renderSavedMemes()
-    document.querySelector('.saved-memes').style.display = 'flex';
 }
 
 
