@@ -34,7 +34,7 @@ function renderGallery() {
 
 function renderCanvas() {
     showImg()
-    renderStickerGallery()
+    // renderStickerGallery()
 
 }
 
