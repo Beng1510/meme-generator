@@ -93,16 +93,28 @@ var gImgs = [
 
 ]
 
+var gStickers = [
+    {
+    url: 'img/18.jpg'
+    },
+    {
+    url: 'img/17.jpg'
+    },
+    {
+    url: 'img/16.jpg'
+    }
+]
+
 var gMeme = creatMeme()
 
-function drawImg(imageSource) {
-    console.log('lets draw an img');
-    var img = new Image()
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-    };
-    img.src = imageSource;
-}
+// function drawImg(imageSource) {
+//     console.log('lets draw an img');
+//     var img = new Image()
+//     img.onload = () => {
+//         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+//     };
+//     img.src = imageSource;
+// }
 
 function UserTxtInput() {
     console.log('hi');
@@ -176,8 +188,8 @@ function creatMeme() {
         selectedImgId: 1,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'First Text', size: 50, align: 'center', color: 'white', stroke: 'black', font: 'Impact' },
-            { txt: 'Second Text', size: 50, align: 'center', color: 'white', stroke: 'black', font: 'Impact' }
+            { txt: 'First Text', size: 50, align: 'center', color: 'white', stroke: 'black', font: 'Impact', x: 270, y: 60 },
+            { txt: 'Second Text', size: 50, align: 'center', color: 'white', stroke: 'black', font: 'Impact', x: 270, y: 500 }
         ]
     }
 }
@@ -200,13 +212,20 @@ function changeTxtSize(diff) {
 function getSelectedLineIdx() {
     return gMeme.selectedLineIdx;
 }
+function getSelectedLineCoordsX(){
+    return gMeme.lines[gMeme.selectedLineIdx].x
+}
+function getSelectedLineCoordsY(){
+    return gMeme.lines[gMeme.selectedLineIdx].y
+}
 
 function updateMemeLine() {
     gMeme.selectedLineIdx++;
+
     if (gMeme.selectedLineIdx >= gMeme.lines.length) {
         gMeme.selectedLineIdx = 0;
     }
-    drawRect()
+    
 }
 
 function  updateFontColor(chosenColor) {
@@ -246,4 +265,11 @@ function addNewText() {
     gMeme.lines.push(line);
     gMeme.selectedLineIdx = gMeme.lines.length - 1;
 }
+
+function getStickerForDisplay() {
+    var stickers = gStickers
+    return stickers
+}
+
+
 

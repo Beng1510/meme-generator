@@ -24,7 +24,12 @@
                         href="#">Memes</a></li>
                 <li><a href="#about" onclick="showAbout()">About</a></li>
             </ul>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <div class="container hamburger" onclick="toggleMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <!-- <button class="hamburger" onclick="toggleMenu()">☰</button> -->
         </nav>
     </header>
 
@@ -120,6 +125,12 @@
                         <div class="share-container"></div>
                     </form>
                 </div>
+                <div class="sixth-row flex align-center">
+                    <div class="sticker-gallery">
+<!-- <p>sticker</p> -->
+                    </div>
+                </div>
+
                 <div class="text-add"></div>
             </section>
         </section>
@@ -129,7 +140,11 @@
     <section id="about" class="about-container flex align-center justify-center">
         <img class="about-img" src="img/me.jpg">
         <div class="about-me">
-            <p class="about-p">My name is Ben Graham <br> Hope you all enjoy my Meme Generator
+            <p class="about-p">My name is Ben Graham,
+                <br>
+                And I am an aspiring Full-Stack Web Dveloper
+                <br>
+                Hope you all enjoy my Meme Generator
             </p>
             <a href="https://www.linkedin.com/feed/" target="_blank" class="link"><img class="icon linkedin-icon"
                     src="icons/linkedin-logo.png"></a>
@@ -154,7 +169,7 @@
     </footer>
 
     <script src="js/storage-service.js"></script>
-    <script src="js/utils-service.js"></script>
+    <!-- <script src="js/utils-service.js"></script> -->
     <script src="js/meme-service.js"></script>
     <script src="js/meme-controller.js"></script>
 </body>
